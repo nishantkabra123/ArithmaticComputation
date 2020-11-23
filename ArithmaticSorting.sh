@@ -1,18 +1,22 @@
-#!/bin/bash -x
+#!/bin/bash
+read -p "Enter a : " a
+read -p "Enter b : " b
+read -p "Enter c : " c
+result2=$(($a+($b*$c)))
+result3=$((($a*$b)+$c))
+result4=$(($c+($a/$b)))
+result5=$((($a%$b)+$c))
 
-read -p "enter a" a
-read -p "enter b" b
-read -p "enter c" c
+declare -A results
 
-result1=$(($a+($b*$c)))
-result2=$((($a*$b)+$c))
-result3=$(($c+($a/$b)))
-result4=$((($a%$b)+$c))
+for i in {2..5}
+do
+	results[$i]=`echo "$((result$i))"`
+done
 
-echo "first result is $result1"
-echo "second result is $result2"
-echo "third result is $result3"
-echo "third result is $result4"
+echo "Stored results are : "${results[@]}
 
-
-
+echo "first is $result2"
+echo "second is $result3"
+echo "third is $result4"
+echo "fourth is $result5"
