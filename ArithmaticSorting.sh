@@ -12,11 +12,13 @@ declare -A results
 for i in {2..5}
 do
 	results[$i]=`echo "$((result$i))"`
+    compute[(($i-2))]=${results[$i]}
 done
 
-echo "Stored results are : "${results[@]}
+echo "first result is $result2"
+echo "second result 0is $result3"
+echo "third result is $result4"
+echo "fourth result is $result5"
 
-echo "first is $result2"
-echo "second is $result3"
-echo "third is $result4"
-echo "fourth is $result5"
+echo "results in dictionary are : "${results[@]}
+echo "results in array are : "${compute[@]}
