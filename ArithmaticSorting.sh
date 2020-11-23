@@ -6,9 +6,11 @@ read -p "enter c" c
 
 result1=$(($a+($b*$c)))
 result2=$((($a*$b)+$c))
+result3=$(($c+($a/$b)))
 
 echo "first result is $result1"
 echo "second result is $result2"
+echo "third result is $result3"
 
 
 
