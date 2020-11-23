@@ -15,6 +15,24 @@ do
     compute[(($i-2))]=${results[$i]}
 done
 
+function sortArray(){
+	array=("$@")
+	for i in ${!array[@]}
+	do
+		for j in ${!array[@]}
+		do
+			if [ ${array[$i]} -gt ${array[$j]} ]
+			then
+				temp=${array[$i]}
+				array[$i]=${array[$j]}
+				array[$j]=$temp
+			fi
+		done
+	echo ${array[@]}
+	done
+	echo "Array in descending order is : " ${array[@]}
+}
+
 echo "first result is $result2"
 echo "second result 0is $result3"
 echo "third result is $result4"
@@ -22,3 +40,5 @@ echo "fourth result is $result5"
 
 echo "results in dictionary are : "${results[@]}
 echo "results in array are : "${compute[@]}
+
+sortArray "${compute[@]}"
