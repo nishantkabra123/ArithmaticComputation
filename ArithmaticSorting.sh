@@ -21,16 +21,15 @@ function sortArray(){
 	do
 		for j in ${!array[@]}
 		do
-			if [ ${array[$i]} -gt ${array[$j]} ]
+			if [ ${array[$i]} -lt ${array[$j]} ]
 			then
 				temp=${array[$i]}
 				array[$i]=${array[$j]}
 				array[$j]=$temp
 			fi
 		done
-	echo ${array[@]}
 	done
-	echo "Array in descending order is : " ${array[@]}
+	echo "Array in ascending order is : " ${array[@]}
 }
 
 echo "first result is $result2"
